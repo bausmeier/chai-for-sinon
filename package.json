@@ -1,0 +1,15 @@
+{
+  "name": "chai-for-sinon",
+  "description": "It's Chai with some added assertions for Sinon.",
+  "version": "0.0.1",
+  "author": "Brett Ausmeier <brett@ausmeier.co.za>",
+  "main": "./SinonAssertions",
+  "keywords": [
+    "chai",
+    "sinon",
+    "assertions"
+  ],
+  "dependencies": {
+    "chai": "~1.8.1"
+  }
+}
