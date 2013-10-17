@@ -9,6 +9,10 @@
     "sinon",
     "assertions"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bausmeier/chai-for-sinon.git"
+  },
   "dependencies": {
     "chai": "~1.8.1"
   }
