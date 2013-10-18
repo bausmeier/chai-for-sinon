@@ -1,7 +1,7 @@
 {
   "name": "chai-for-sinon",
   "description": "It's Chai with some added assertions for Sinon.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Brett Ausmeier <brett@ausmeier.co.za>",
   "main": "./SinonAssertions",
   "keywords": [
@@ -15,5 +15,12 @@
   },
   "dependencies": {
     "chai": "~1.8.1"
+  },
+  "devDependencies": {
+    "sinon": "~1.7.3",
+    "mocha": "~1.13.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

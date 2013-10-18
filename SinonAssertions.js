@@ -11,6 +11,18 @@ Assertion.addMethod('calledOnce', function() {
   );
 });
 
+Assertion.addMethod('calledWith', function() {
+  var obj = this._obj;
+  new Assertion(obj.calledWith).to.exist;
+  this.assert(
+    obj.calledWith.apply(obj, arguments),
+    'expected #{this} to be called with arguments #{exp}, but got #{act}',
+    'expected #{this} not to be called with arguments #{exp}, but got #{act}',
+    arguments,
+    obj.args
+  );
+});
+
 Assertion.addMethod('calledWithMatch', function() {
   var obj = this._obj;
   new Assertion(obj.calledWithMatch).to.exist;
@@ -20,6 +32,16 @@ Assertion.addMethod('calledWithMatch', function() {
     'expected #{this} not to be called with arguments matching #{exp}, but got #{act}',
     arguments,
     obj.args
+  );
+});
+
+Assertion.addMethod('thrown', function(arg) {
+  var obj = this._obj;
+  new Assertion(obj.threw).to.exist;
+  this.assert(
+    obj.threw(arg),
+    'expected #{this} to have thrown',
+    'expected #{this} not to have thrown'
   );
 });
 

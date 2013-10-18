@@ -7,7 +7,7 @@ It's [Chai](http://chaijs.com) with some added assertions for [Sinon](http://sin
 Replace `require('chai')` with `require('chai-for-sinon')`.
 
 Example:
-```
+```javascript
 var chai = require('chai-for-sinon'),
     expect = chai.expect;
 ```
@@ -17,7 +17,7 @@ var chai = require('chai-for-sinon'),
 Add `require('chai-for-sinon')` after requiring Chai.
 
 Example:
-```
+```javascript
 var chai = require('chai');
 require('chai-for-sinon');
 ```
@@ -31,15 +31,33 @@ The assertions that are added.
 Assert that the spy/stub/mock function was called once.
 
 Example:
-```
-expect(stub.method).to.be.calledOnce();
+```javascript
+expect(stub).to.be.calledOnce();
 ```
 
-### calledWithMatch([arg1[, ...]])
+### calledWith(arg1[, ...])
+
+Assert that the spy/stub/mock function was called with the arguments passed to this function.
+
+Example:
+```javascript
+expect(stub).to.be.calledWith({foo: 'bar'}, 'baz');
+```
+
+### calledWithMatch(arg1[, ...])
 
 Assert that the spy/stub/mock function was called with arguments matching the ones passed to this function. Each argument will be wrapped in a Sinon matcher.
 
 Example:
+```javascript
+expect(stub).to.be.calledWithMatch({foo: 'bar'}, 'baz');
 ```
-expect(stub.method).to.be.calledWithMatch({foo: 'bar'}, 'baz');
+
+### thrown()
+
+Assert that the spy/stub/mock threw an exception when it was called.
+
+Example:
+```javascript
+expect(stub).to.have.thrown();
 ```
